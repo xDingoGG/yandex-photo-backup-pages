@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yandex Photo Backup — личное приложение для резервного копирования файлов из Яндекс Диска в Google Диск с помощью rclone.">
+  <title>Yandex Photo Backup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><nav aria-label="Разделы сайта"><a href="index.html" aria-current="page">Приложение</a><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a></nav></header>
+  <main>
+    <h1>Yandex Photo Backup</h1>
+    <p class="lead">Личное приложение для резервного копирования файлов из Яндекс Диска в Google Диск.</p>
+    <p>Владелец подключает свои облачные аккаунты и запускает rclone на своём сервере. Приложение предназначено для его личного использования.</p>
+    <a class="action" href="privacy.html">Как используются данные</a>
+    <section aria-labelledby="copy-title">
+      <h2 id="copy-title">Как устроено копирование</h2>
+      <p>rclone читает каталог Яндекс Диска, сравнивает файлы с резервной копией и передаёт доступные файлы в отдельную папку Google Диска. Данные проходят через сервер владельца; хранение полной промежуточной копии на сервере не требуется.</p>
+      <p>Повторные запуски проверяют сохранённое и снова пробуют скопировать недоступные ранее файлы. Используется команда copy: исчезновение файла из источника само по себе не удаляет сохранённую копию.</p>
+    </section>
+    <section aria-labelledby="access-title">
+      <h2 id="access-title">Зачем нужен доступ Google</h2>
+      <p>Доступ через Google OAuth позволяет rclone создавать папку резервной копии, загружать файлы и читать необходимые сведения о файлах для сравнения. Фактические разрешения показаны Google перед подтверждением доступа.</p>
+      <details><summary>Где можно отключить доступ?</summary><p>Владелец может отозвать разрешение в <a href="https://myaccount.google.com/connections">подключениях своего аккаунта Google</a>. Последующие операции с этим доступом перестанут работать; уже сохранённые файлы остаются под управлением владельца.</p></details>
+    </section>
+    <section aria-labelledby="owner-title">
+      <h2 id="owner-title">О приложении</h2>
+      <p>Настройку поддерживает владелец аккаунта <a href="https://github.com/xDingoGG">xDingoGG</a>. Приложение использует <a href="https://rclone.org/">rclone</a> и не является официальным продуктом Яндекса или Google.</p>
+      <p><a href="privacy.html">Политика конфиденциальности</a> объясняет работу с данными. <a href="terms.html">Условия использования</a> описывают назначение и ограничения приложения.</p>
+    </section>
+  </main>
+  <footer><p>Yandex Photo Backup · Документация личного приложения · 2026</p></footer>
+</body>
+</html>
